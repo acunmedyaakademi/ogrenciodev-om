@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styles/reset.css">
-    <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="stylesheet" href="../assets/styles/reset.css">
+    <link rel="stylesheet" href="../assets/styles/classDetail.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     <nav>
         <div class="navLogo">
             <a href="#">
-                <img src="assets/images/acunmedya-akademi-logo-siyah.png" alt="">
+                <img src="../assets/images/acunmedya-akademi-logo-siyah.png" alt="">
             </a>
         </div>
 
@@ -28,7 +28,7 @@
             <button data-open-model class="createClass">Sınıf oluştur</button>
 
             <div class="profile">
-                <a href="#"><img src="assets/images/userImg.jpg" alt=""></a>
+                <a href="#"><img src="../assets/images/userImg.jpg" alt=""></a>
                 <div class="profileText">
                     <p>Brian Ford</p>
                     <p>brianford@lok.com</p>
@@ -62,38 +62,19 @@
 
 
 
-    <div class="container">
+    <div class="classDetail">
 
-        <!-- cards START -->
-        <div class="cards">
-
-            <!-- card -->
-            <!-- card -->
-            <ul class="card">
-                <li class="cardHeader">
-                    <a href="#">
-                        <img src="assets/images/classImg.jpg" alt="">
-                        <div>
-                            <h2>Sınıf adı</h2>
-                        </div>
-                    </a>
-                </li>
-                <li class="cardContent">
-
-                </li>
-                <li class="cardButton">
-                    <button class="detail">Detay</button>
-                    <button class="delete">Sil</button>
-                </li>
-
-            </ul>
+        <div class="classDetailHeader">
+            <h1>Sınıf Detay Sayfası</h1>
         </div>
-        <!-- cards END -->
+        <div class="classDetails">
+            <div class="classDetailsLeft"></div>
+            <div class="classDetailsRight"></div>
+        </div>
 
     </div>
 
     <script>
-        const deleteButtons = document.querySelectorAll('.delete')
         const button = document.querySelector('.createClass')
         const dialog = document.querySelector("dialog");
         const cancel = document.querySelector(".cancel");
@@ -113,16 +94,6 @@
             ) {
                 dialog.close();
             }
-        })
-
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                if (confirm("Silmek istediğinize emin misiniz?") == true) {
-                    alert("Silme işleminiz başarılı")
-                } else {
-                    alert("Silme işleminiz iptal edildi")
-                }
-            })
         })
     </script>
 
