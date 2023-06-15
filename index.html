@@ -1,16 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/reset.css">
-    <title>Document</title>
-    <script src="js/script.js"></script>
-</head>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/styles/reset.css">
+        <link rel="stylesheet" href="assets/styles/index.css">
+        <title>Anasayfa</title>
+    </head> 
 <body>
 
-</body>
+    <nav>
+        <a href="#"><h2>AcunMedya Akademi</h2></a>
 
+        <div class="navRight">
+
+            <button data-open-model class="createClass">Sınıf oluştur</button>
+            
+            <div class="profile">
+                <a href="#"><img src="assets/images/userImg.jpg" alt=""></a>
+                <div class="profileText">
+                  <p>Brian Ford</p>
+                  <p>brianford@lok.com</p>
+                </div>
+              </div>
+        </div>
+        
+    </nav>
+
+
+    <dialog data-model>
+        <section class="loginPage">
+            <form autocomplete="off">
+
+                <span>Sınıf oluştur</span>
+            
+                <div class="inputBox">
+                    <input type="text" name="class" required>
+                    <label for="class">Sınıf adı</label>
+                </div>
+        
+                <div class="inputBox">
+                    <input type="text" name="section" required>
+                    <label for="section">Bölüm</label>
+                </div>
+
+                <div class="buttons">
+                    <button class="cancel" formmethod="dialog" type="submit">Cancel</button>
+                    <button type="submit">Submit</button>
+                </div>
+            
+                
+            </form>
+        </section>
+    </dialog>
+    
+    
+
+    <div class="container">
+
+        <!-- cards START -->
+        <div class="cards">
+
+             <!-- card -->
+               <!-- card -->
+               <ul class="card">
+                <li class="cardHeader">
+                    <a href="#">
+                        <img src="assets/images/classImg.jpg" alt="">
+                        <div>
+                            <h2>Sınıf adı</h2>
+                            <h3>bölüm</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="cardContent">
+                    
+                </li>
+                <li class="cardButton">
+                    <button class="detail">Detay</button>
+                    <button class="delete">Sil</button>
+                </li>
+
+            </ul>
+              <!-- card -->
+              <ul class="card">
+                <li class="cardHeader">
+                    <a href="#">
+                        <img src="assets/images/classImg.jpg" alt="">
+                        <div>
+                            <h2>Sınıf adı</h2>
+                            <h3>bölüm</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="cardContent">
+                    
+                </li>
+                <li class="cardButton">
+                    <button class="detail">Detay</button>
+                    <button class="delete">Sil</button>
+                </li>
+
+            </ul>
+
+          <!-- card -->
+          <ul class="card">
+            <li class="cardHeader">
+                <a href="#">
+                    <img src="assets/images/classImg.jpg" alt="">
+                    <div>
+                        <h2>Sınıf adı</h2>
+                        <h3>bölüm</h3>
+                    </div>
+                </a>
+            </li>
+            <li class="cardContent">
+                
+            </li>
+            <li class="cardButton">
+                <button class="detail">Detay</button>
+                <button class="delete">Sil</button>
+            </li>
+
+        </ul>
+
+            <!-- card -->
+            <ul class="card">
+                <li class="cardHeader">
+                    <a href="#">
+                        <img src="assets/images/classImg.jpg" alt="">
+                        <div>
+                            <h2>Sınıf adı</h2>
+                            <h3>bölüm</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class="cardContent">
+                    
+                </li>
+                <li class="cardButton">
+                    <button class="detail">Detay</button>
+                    <button class="delete">Sil</button>
+                </li>
+
+            </ul>
+        </div>
+        <!-- cards END -->
+
+    </div>
+
+    <script>
+        const button = document.querySelector('.createClass')
+        const dialog = document.querySelector("dialog");
+        const cancel = document.querySelector(".cancel");
+
+        button.addEventListener('click', () => {
+            dialog.showModal();
+        })
+
+        cancel.addEventListener('click', () => {
+            dialog.close();
+        })
+
+        dialog.addEventListener('click', e => {
+            const dialogDimension = dialog.getBoundingClientRect()
+            if(
+                e.clintX < dialogDimension.left || e.clientX > dialogDimension.right || e.clientY < dialogDimension.top || e.clientY > dialogDimension.bottom
+            ) {
+                dialog.close();
+            }
+        })
+    </script>
+
+</body>
 </html>
