@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="../assets/styles/reset.css">
     <link rel="stylesheet" href="../assets/styles/classDetail.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="../assets/js/script.js" defer></script>
     <title>Anasayfa</title>
 </head>
 
@@ -28,7 +33,7 @@
             <button data-open-model class="createClass">Sınıf oluştur</button>
 
             <div class="profile">
-                <a href="#"><img src="../assets/images/userImg.jpg" alt=""></a>
+                <a href="../index.html"><img src="../assets/images/userImg.jpg" alt=""></a>
                 <div class="profileText">
                     <p>Brian Ford</p>
                     <p>brianford@lok.com</p>
@@ -68,16 +73,96 @@
             <h1>Sınıf Detay Sayfası</h1>
         </div>
         <div class="classDetails">
-            <div class="classDetailsLeft"></div>
-            <div class="classDetailsRight"></div>
+            <div class="classDetailsLeft">
+                <!-- main start -->
+                <div class="main">
+                    <div class="mainHeader">
+                        <input type="text" name="SearchInput" placeholder="Öğrenci ara">
+                        <button id="searchBtnFirst">Öğrenci Ekle</button>
+                    </div>
+
+                    <ul class="studentWorkList">
+
+                        <li class="studentWorkListItem">
+                            <span>Book guest for Agust</span>
+                            <div class="studentWorkListRight">
+                                <i class="fa-regular fa-pen-to-square" id="edit"></i>
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+                <!-- main end -->
+            </div>
+            <div class="classDetailsRight">
+
+
+                <dialog data-model class="homeWorkDialog">
+                    <section class="loginPage">
+                        <form autocomplete="off">
+
+                            <span>Ödev Ver</span>
+
+                            <div class="inputBox">
+                                <input type="text" name="class">
+                                <label for="class">Başlık</label>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="class">
+                                <label for="class">Link</label>
+                            </div>
+                            <div class="inputBox">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <label for="class">Link</label>
+                            </div>
+
+                            <div class="buttons">
+                                <button class="homeworkCancel" formmethod="dialog" type="submit">İptal Et</button>
+                                <button type="homeworkSubmit">Ekle</button>
+                            </div>
+
+
+                        </form>
+                    </section>
+                </dialog>
+                <!-- main start -->
+                <div class="main">
+                    <div class="mainHeader">
+                        <input type="text" name="SearchInput" placeholder="Ödev Ara">
+                        <button id="odevVerBtn">Ödev Ver</button>
+                    </div>
+
+                    <ul class="homeWorkList">
+
+                        <li class="homeWorkListItem">
+                            <span>Book guest for Agust</span>
+                            <div class="homeWorkListRight">
+                                <i class="fa-regular fa-pen-to-square" id="edit"></i>
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- main end -->
+            </div>
         </div>
 
     </div>
 
     <script>
+        const homeWorkListItem = document.querySelectorAll('.homeWorkListItem')
         const button = document.querySelector('.createClass')
+        const homeWorkDialog = document.querySelector(".homeWorkDialog");
         const dialog = document.querySelector("dialog");
         const cancel = document.querySelector(".cancel");
+        const odevVerBtn = document.querySelector("#odevVerBtn");
+        const homeworkCancel = document.querySelector(".homeworkCancel");
+
+
 
         button.addEventListener('click', () => {
             dialog.showModal();
@@ -93,6 +178,28 @@
                 e.clintX < dialogDimension.left || e.clientX > dialogDimension.right || e.clientY < dialogDimension.top || e.clientY > dialogDimension.bottom
             ) {
                 dialog.close();
+            }
+        })
+
+        homeWorkListItem.forEach(item => {
+            item.addEventListener('click', () => {
+                homeWorkDialog.showModal();
+            })
+        })
+
+        homeworkCancel.addEventListener('click', () => {
+            homeWorkDialog.close();
+        })
+        odevVerBtn.addEventListener('click', () => {
+            homeWorkDialog.showModal();
+        })
+
+        homeWorkDialog.addEventListener('click', e => {
+            const d = homeWorkDialog.getBoundingClientRect()
+            if (
+                e.clintX < d.left || e.clientX > d.right || e.clientY < d.top || e.clientY > d.bottom
+            ) {
+                homeWorkDialog.close();
             }
         })
     </script>

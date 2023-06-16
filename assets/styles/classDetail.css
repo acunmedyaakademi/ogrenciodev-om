@@ -78,3 +78,118 @@ nav {
 }
 
 /* nav END */
+.classDetailHeader {
+  padding: 20px 50px;
+}
+.classDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 28px;
+}
+
+/* homeWork start */
+.main {
+  padding: 0 20px;
+  max-height: calc(100vh - 196.25px);
+  position: relative;
+}
+
+.mainHeader {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.mainHeader input {
+  outline: none;
+  width: calc(100% - 180px);
+  border-radius: 5px;
+  color: #000;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.mainHeader button {
+  width: max-content;
+  padding: 13px 18px;
+  border-radius: 5px;
+  margin-left: auto;
+  background-color: hsl(130, 29%, 68%);
+  border: none;
+  font-weight: 600;
+}
+
+.mainHeader button:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.mainHeader button:active {
+  transform: scale(1);
+}
+/* homeWork end */
+
+/* todoList start */
+.homeWorkList {
+  width: 100%;
+}
+
+.homeWorkListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #cccaca;
+  margin-bottom: 10px;
+}
+
+.homeWorkListItem span {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.homeWorkListRight {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.homeWorkListItem:hover {
+  background-color: hsl(210, 57%, 78%);
+}
+
+.studentWorkList {
+  width: 100%;
+}
+
+.studentWorkListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #cccaca;
+  margin-bottom: 10px;
+}
+
+.studentWorkListItem span {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.studentWorkListRight {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.studentWorkListItem:hover {
+  background-color: hsl(210, 57%, 78%);
+}
